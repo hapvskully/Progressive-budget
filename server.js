@@ -5,6 +5,16 @@ const compression = require("compression");
 
 const PORT = process.env.PORT || 3000;
 
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://database-1/budget',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+);
+
 const app = express();
 
 app.use(logger("dev"));
