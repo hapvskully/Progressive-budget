@@ -1,14 +1,5 @@
 let db;
 
-mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://database-1/budget',
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useCreateIndex: true,
-      useFindAndModify: false
-    }
-  );
 
 const request = window.indexedDB.open("budget", 1);
 
