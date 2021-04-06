@@ -7,7 +7,10 @@ fetch("/api/transaction")
   })
   .then(data => {
     // save db data on global variable
-    if (!data || data.length<1) return;
+    if (!data || data.length<1) {
+      console.log("no data")
+      return;
+    }
     transactions = data;
 
     populateTotal();
