@@ -7,7 +7,7 @@ fetch("/api/transaction")
   })
   .then(data => {
     // save db data on global variable
-    if (!data) return;
+    if (!data || data.length<1) return;
     transactions = data;
 
     populateTotal();
